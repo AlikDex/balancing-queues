@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Balancer\Strategy;
+
+use App\Queue\IQueue;
+
+/**
+ * Контейнер для очереди, содерджит саму очередь и веса для нее.
+ * Нужен чтобы не завязываться на конкретную реализацию очереди.
+ * Не добавлять в нее эти параметы.
+ */
+final class Item
+{
+    public int $effectiveWeight;
+    public int $currentWeight;
+
+    public function __construct(
+        public IQueue $queue,
+        public int $weight = 1
+    ) {
+        $this->effectiveWeight = $weight;
+        $this->currentWeight = $weight;
+    }
+}
