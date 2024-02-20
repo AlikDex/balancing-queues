@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Balancer;
 
-use App\Balancer\Strategy\SmoothIBalance;
 use App\Balancer\Strategy\IBalanceStrategy;
 
 /**
