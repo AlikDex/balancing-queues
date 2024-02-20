@@ -11,7 +11,7 @@ use App\Queue\IQueue;
  *
  * @package App\Balancer\Strategy
  */
-final class SmoothBalance implements BalanceStrategy
+final class SmoothIBalance implements IBalanceStrategy
 {
     /**
      * @var Item[]

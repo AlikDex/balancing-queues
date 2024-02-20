@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Balancer;
 
-use App\Balancer\Strategy\SmoothBalance;
-use App\Balancer\Strategy\BalanceStrategy;
+use App\Balancer\Strategy\SmoothIBalance;
+use App\Balancer\Strategy\IBalanceStrategy;
 
 /**
  * Балансер очередей, возможно несколько стратегий.
@@ -14,8 +14,8 @@ use App\Balancer\Strategy\BalanceStrategy;
 final class Balancer
 {
     public function __construct(
-        private readonly BalanceStrategy $strategy,
-        private readonly int             $capacity = 10
+        private readonly IBalanceStrategy $strategy,
+        private readonly int              $capacity = 10
     ) {}
 
     public function run(): void

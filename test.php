@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 use App\Balancer\Balancer;
-use App\Balancer\Strategy\SmoothBalance;
+use App\Balancer\Strategy\SmoothIBalance;
 use App\Queue\Queue;
 
 require(__DIR__ . '/vendor/autoload.php');
 
-$strategy = new SmoothBalance();
+$strategy = new SmoothIBalance();
 
 $strategy->add(createQueue(), 1);
 $strategy->add(createQueue(), 10);
