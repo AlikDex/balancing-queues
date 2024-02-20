@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Balancer\Balancer;
 use App\Balancer\Strategy\SmoothBalance;
 use App\Queue\Queue;
