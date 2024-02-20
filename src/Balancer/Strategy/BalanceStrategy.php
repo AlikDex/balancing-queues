@@ -4,7 +4,7 @@ namespace App\Balancer\Strategy;
 
 use App\Queue\IQueue;
 
-interface WeightStrategy
+interface BalanceStrategy
 {
     public function add(IQueue $queue, int $weight): void;
 
