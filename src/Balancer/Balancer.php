@@ -22,11 +22,9 @@ final class Balancer
         while (true) {
             $batch = $this->getBatch();
 
-            $this->handle($batch);
-
-            if (\count($batch) === 0) {
-                \sleep(1);
-            }
+            (\count($batch) > 0)
+                ? $this->handle($batch)
+                : \sleep(1);
         }
     }
 
