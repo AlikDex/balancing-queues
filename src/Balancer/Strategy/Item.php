@@ -15,14 +15,12 @@ use App\Queue\IQueue;
  */
 final class Item
 {
-    public int $effectiveWeight;
     public int $currentWeight;
 
     public function __construct(
         public IQueue $queue,
         public int $weight = 1
     ) {
-        $this->effectiveWeight = $weight;
         $this->currentWeight = $weight;
     }
 }

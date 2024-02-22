@@ -36,7 +36,6 @@ final class SmoothWeight implements IBalanceStrategy
     public function reset(): void
     {
         foreach ($this->items as $item) {
-            $item->effectiveWeight = $item->weight;
             $item->currentWeight = 0;
         }
     }
@@ -75,8 +74,8 @@ final class SmoothWeight implements IBalanceStrategy
                 continue;
             }
 
-            $item->currentWeight += $item->effectiveWeight;
-            $total += $item->effectiveWeight;
+            $item->currentWeight += $item->weight;
+            $total += $item->weight;
 
             if ($bestItem === null || $item->currentWeight > $bestItem->currentWeight) {
                 $bestItem = $item;
