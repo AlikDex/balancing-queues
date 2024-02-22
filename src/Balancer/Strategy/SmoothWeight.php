@@ -78,11 +78,7 @@ final class SmoothWeight implements IBalanceStrategy
             $item->currentWeight += $item->effectiveWeight;
             $total += $item->effectiveWeight;
 
-            if ($item->effectiveWeight < $item->weight) {
-                $item->effectiveWeight++;
-            }
-
-            if ($bestItem === null || $item->currentWeight > $item->effectiveWeight) {
+            if ($bestItem === null || $item->currentWeight > $bestItem->currentWeight) {
                 $bestItem = $item;
             }
         }
