@@ -18,11 +18,12 @@ final class SmoothWeight implements IBalanceStrategy
      */
     private array $items = [];
 
-    public function add(IQueue $queue, int $weight): void
+    public function add(IQueue $queue, int $weight = 1): void
     {
         $item = new Item($queue, $weight);
         $this->items[] = $item;
     }
+
     public function next(): IQueue|null
     {
         return $this->nextWeighted();
